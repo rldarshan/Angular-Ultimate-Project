@@ -1,20 +1,159 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{title}}!
-  </h1>
-  <img width="300" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>                        
+          </button>
+      <a class="navbar-brand" href="#">Angular App</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+    <ul class="nav navbar-nav">
+       <li class="active"><a routerLink="/">Home</a></li>
+      <li><a routerLink="/table">Table</a></li>
+      <li><a routerLink="/data">Data</a></li>
+      <li><a routerLink="/amchart">Amchart</a></li> 
+      <li><a routerLink="/material">Material</a></li>
+      <li><a routerLink="/form-validation">Form-validation</a></li>
+      <li><a routerLink="/crud">CRUD Operation</a></li>
+		<!-- <li class="active"><a class="btn btn-warning">Home</a></li>
+      <li><a class="btn btn-danger" onclick='laodpage="<app-data></app-data>"' data-toggle="modal" data-target="#hintclicktocall">Data</a></li>
+      <li><a class="btn btn-primary" onclick='laodpage="<app-table></app-table>"' data-toggle="modal" data-target="#hintclicktocall">Table</a></li> -->
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+      <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+    </ul>
+  </div>
 </div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+</nav> 
 
+<div><span id="show" onclick="alert(44);">show angular</span> <b>:</b> 
+  <mat-checkbox (click)="toggleshow()"></mat-checkbox>
+</div>
+<br>
+
+<div *ngIf=isshow id="display" style="text-align:center" class="col-md-6">
+    <div style="text-align:center"><code>observable|async</code>: Time: {{ time | async | date: 'mediumTime'}}</div> 
+    <br>
+    <hr>
+    <app-pipesdemo></app-pipesdemo>
+    <hr> 
+    <br>counter:{{ counter}}
+    <button (click)="increment">Increment</button>
+    <br>
+    <div style="text-align:center">Select 2 Example:  
+      <!-- <select2>
+        <option value="1">orange</option>
+        <option value="2">banana</option>
+        <option value="3">apple</option>
+        <option value="4">jack fruit</option>
+        <option value="5">gauva</option>
+        <option value="6">kiwi</option>
+      </select2> -->
+<!--       <select [data]="eampledata"></select> -->
+    </div>
+    <br>
+  <h4 class="theme-light">
+    Welcome to {{title | uppercase}}
+  </h4>
+  <img width="100" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
+
+    <div id="highlight" class="di-component" myHighlight>
+      <h3>Hero Bios and contacts</h3>
+      <div myHighlight='yellow'>
+        <hero-bios-and-contacts></hero-bios-and-contacts>
+      </div> 
+    </div>
+
+
+<br><br>
+<div ngClass="col-md-12 col-sm-12">
+    <input type="radio" (click)="color='lightgreen'">Green
+    <input type="radio" (click)="color='yellow'">Yellow
+    <input type="radio" (click)="color='cyan'">Cyan
+  <br>
+  <p [myHighlight]="color">Highlight me!</p>
+   
+  <p [myHighlight]="color" defaultColor="violet">
+    Highlight me too!
+  </p>
+</div>
+
+<ng-template class="col-md-12 col-sm-12">
+  <textarea [(ngModel)]='color1' [ngClass]='color1' ></textarea>
+</ng-template>
+
+<br><br><br><br><br><br>
+
+<app-user></app-user>
+<br><br>
+
+<button class="btn btn-info" type="button" (click)="populatedata();">Populatedata</button>
+<ul>
+  1).<li *ngFor="let states of pop_data">state ========= {{states}}</li>
+</ul>
+<br><br>
+
+<button class="btn btn-info" type="button" (click)="listdata()">Listdata</button>
+
+<br><br>
+ 
+<ng2-smart-table [settings]="settings" [source]="person" 
+    (create)="editnew($event)" 
+    (edit)="edit($event)" 
+    (delete)="delete($event)"
+    style=" font-size: 16px; ">
+</ng2-smart-table>
+
+</div>  
+
+<router-outlet></router-outlet>
+<br>
+
+
+<div id="hintclicktocall" class="modal fade" role="dialog">
+		  <div class="modal-dialog">
+		
+		    <!-- Modal content-->
+		    <div class="modal-content" style="width: 90vw;right: 24em;">
+		      <div class="modal-header bg-danger">
+		        <div type="button" class="close" data-dismiss="modal" style="background-color: burlywood;">&times;</div>
+		        <h4 class="modal-title text-center">Modal Header</h4>
+		      </div>
+          <div class="modal-body" >
+          <!-- [innrerHTML]='loadpage'>  -->
+                  <app-page-not-found></app-page-not-found>
+		      </div>
+		      <div class="modal-footer">
+		      <button type="button" class="btn btn-warning" style="width:6em; float:left;">Save</button>
+		        <button type="button" class="btn btn-danger" style="width:6em;" data-dismiss="modal">Close</button>
+		      </div>
+		    </div>
+		
+		  </div>
+</div>
+    
+
+  <!-- <h3>post-parent</h3> -->
+  <!-- <post-parent></post-parent> -->
+
+<!-- <style>
+  #display
+  {
+    display: none;
+  }
+</style>   -->
+
+ <script>
+
+  $(function(){
+	  alert(33);
+	  
+  //   $('input [type="checkbox"]').change(function(){
+  //     alert(11)
+  //       $("#display").toggle();
+  //   });
+  });
+</script>   

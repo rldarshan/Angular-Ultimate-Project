@@ -1,0 +1,19 @@
+h2 {
+    background-color: #EDE995;     /*   applies to current-component */
+  }
+
+:host {
+    font-weight: bold ;        /*   applies to full-page */
+  }
+  
+  :host h2{
+    color: red;             /*   applies to current-component */
+  }
+ th{
+   text-align: center;
+ }
+ 
+ td{
+   border: 1px solid #969191;
+ }
+  

@@ -1,0 +1,1 @@
+The response body doesn't return all the data you may need. Sometimes servers return special headers or status codes to indicate certain conditions, and inspecting those can be necessary. To do this, you can tell HttpClient you want the full response instead of just the body with the observe option:

@@ -1,0 +1,102 @@
+<style>
+  @media screen and (max-width:992px) {
+    .btn-danger {
+      background-color: red
+    }
+  }
+  /* :host-context(.theme-light) h2 {
+    background-color: #EDE995;
+  } */
+
+</style>
+
+<div class="col-md-6">
+
+  <h2 Style="color:colorName" class="theme-light">This is dynamically changing style using 'NgStyle'</h2>
+
+  <div class="col-md-3 col-sm-4" style="text-align:center">
+    <button class="btn btn-warning btn-sm" (click)="ngstyle()">Change color</button>
+  </div>
+  <!-- <div class="col-md-9"></div> -->
+  <br><br>
+
+  <div class="panel panel-primary">
+    <div class="panel-heading">Panel Heading</div>
+    <div class="panel-body">Panel Content</div>
+  </div>
+
+  <br><br>
+  <div class="col-md-6 col-sm-6">
+    <button class="btn btn-danger" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
+  </div>
+
+  <div class="dropdown col-md-6 col-sm-6">
+    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" style="width:auto;">Dropdown Example
+    <span class="caret"></span></button>
+    <ul class="dropdown-menu">
+      <li><a href="#">HTML</a></li>
+      <li><a href="#">CSS</a></li>
+      <li><a href="#">JavaScript</a></li>
+    </ul>
+  </div>
+
+  <br><br> <br><br>
+  <div class="col-md-6 col-sm-6">
+    <a class='btn btn-success' (click)='onBack()'>navigate to table</a>
+  </div>
+
+  <div class="col-md-6 col-sm-6">
+    <!--  	 <input class="btn btn-warning" style="width:auto;" type="button" value="table in modal-Window" /> -->
+    <a class="btn btn-warning" href="javascript:void(0)" value="<app-page-not-found></app-page-not-found>"
+       (click)="callmodal(this.value);" data-toggle="modal" data-target="#hintclicktocall">table in modal-Window</a>
+  </div>
+  <br><br> <br><br>
+
+  <div class="col-md-6 col-sm-6">
+    <input placeholder="Enter input and hit Enter" (keyup.enter)='onkeyup();' /><br>
+    <input placeholder="Enter input and hit Tab" (keyup.tab)='ontab();' />
+  </div>
+
+  <div class="col-md-6 col-sm-6">
+    <little-tour></little-tour>
+  </div>
+
+
+  <!-- ////////////////////////  LOGIN MODAL ///////////////////////////////// -->
+  <div id="id01" class="modal" onclick="this.style.display='none'">
+
+    <form class="modal-content animate">
+      <div class="imgcontainer">
+        <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+        <img src="assets/img_avatar2.png" alt="Avatar" class="avatar" style="width:100px">
+      </div>
+
+      <div class="container-fluid">
+        <label><b>Username</b></label>
+        <input type="text" placeholder="Enter Username" name="uname" required>
+
+        <label><b>Password</b></label>
+        <input type="password" placeholder="Enter Password" name="psw" required>
+
+        <button type="submit">Login</button>
+        <input type="checkbox" checked="checked"> Remember me
+      </div>
+
+      <div class="container-fluid" style="background-color:#f1f1f1">
+        <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+        <span class="psw">Forgot <a href="#">password?</a></span>
+      </div>
+    </form>
+  </div>
+  <!-- //////////////////////// END OF  LOGIN MODAL ///////////////////////////////// -->
+
+</div>
+ <script>
+  $('[data-toggle="modal"]').click(function(){
+    alert(33)
+      setTimeout(function(){
+
+        alert(this.value);
+      },200);
+    });
+  </script>

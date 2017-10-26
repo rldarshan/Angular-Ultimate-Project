@@ -1,0 +1,48 @@
+<div class="col-md-6">
+<h4>RequestType Service</h4>
+
+  <form >
+  Name: <input type="text"  class="form-control" placeholder="Name" name="name" [(ngModel)]="profileobj.name"><br>
+
+  Age: <input type="text"  class="form-control" placeholder="Age" name="age" [(ngModel)]="profileobj.age"><br>
+
+  Salary: <input type="text"  class="form-control" placeholder="salary" name="salary" [(ngModel)]="profileobj.salary"><br><br>
+
+<br />
+<button type="button" style="padding: 4px 11px;" *ngIf="isadd" class="btn btn-info" (click) = "create(profileobj)">Add </button>
+
+<div *ngIf="isedit">
+  <button type="button" value="add" style="padding: 4px 11px;" class="btn btn-success" (click)="update(profileobj);">Update</button>
+  <button type="button" value="clear" style="padding: 4px 11px;" class="btn btn-success" (click)="cancel(profileobj);">Clear</button><br>
+</div>
+</form>
+
+
+<table class="table table-hover table-bordered">
+ <thead class="bg-primary">
+     <tr>
+       <th>ID</th>
+       <th>Name</th>
+       <th>Age</th>
+       <th>Salary</th>
+       <th>Action</th>
+     </tr>
+   </thead>
+   <tbody> 
+       <tr *ngFor="let persondetais of person">
+                   <td>{{persondetais.id}}</td>             
+                   <td>{{persondetais.name}}</td>  
+                   <td>{{persondetais.age}}</td>   
+                   <td>{{persondetais.salary}}</td>  
+ 
+                   <td>
+                     <button type="button" value="Edit" style="padding: 4px 11px;" class="btn btn-warning" (click) = "ShowEditPersonForm(persondetais);"  
+                     ><i class="glyphicon glyphicon-pencil"></i></button>
+                     <button type="button" value="Delete" style="padding: 4px 11px;" class="btn btn-danger" (click)="delete(persondetais);">
+                       <i class="	glyphicon glyphicon-trash"></i></button>
+                   </td>        
+       </tr>  
+   </tbody> 
+</table> 
+
+</div>

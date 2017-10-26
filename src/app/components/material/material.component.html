@@ -1,0 +1,208 @@
+<div class="col-md-6 col-sm-6">
+    <h2 style="text-align:center;background-color:lightblue">Material Components</h2>
+    
+    <br>
+    <div class="row">
+      <mat-checkbox class="col-md-3 col-sm-3">Check me!</mat-checkbox>
+      <mat-slide-toggle class="col-md-3 col-sm-3">Active</mat-slide-toggle>
+       
+<!-- <form  class="col-md-6 col-sm-6 example-form">
+          <mat-form-field class="example-full-width">
+              <input mdInput #message maxlength="256" placeholder="Message">
+              <mat-hint align="start"><strong>Don't disclose personal info</strong> </mat-hint>
+              <mat-hint align="end">{{message.value.length}} / 256</mat-hint>
+          </mat-form-field>
+    </form> -->
+    
+      <div class="col-md-6 col-sm-6">
+          <mat-radio-group >
+            <mat-radio-button value="1">Option 1</mat-radio-button>
+            <mat-radio-button value="2">Option 2</mat-radio-button>
+          </mat-radio-group>
+      </div>
+  </div>
+<br>
+    <div class="row">
+    <div class="col-md-4 col-sm-6">
+        <mat-form-field>
+            <input matInput [matDatepicker]="picker" placeholder="Choose a date">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+    </div>
+    
+      <div class="col-md-4 col-sm-3">
+        <!-- <h5>Select</h5> -->
+        <mat-form-field>
+          <mat-select placeholder="Favorite food">
+            <mat-option *ngFor="let food of foods" [value]="food.value">
+              {{ food.viewValue }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+    </div>
+
+        
+       <div class="col-md-4 col-sm-3">
+          Slider<b>:</b>
+         <mat-slider></mat-slider>
+        </div> 
+</div>
+
+<br>
+      <div class="row">
+      <div class="col-md-3 col-sm-3">  
+          <button style="background-color: #c68ff9;" class="btn btn-primary" mat-button [matMenuTriggerFor]="menu">Menu</button>
+          <mat-menu #menu="matMenu">
+            <button mat-menu-item>Item 1</button>
+            <button mat-menu-item>Item 2</button>
+          </mat-menu>
+      </div>
+
+      <div class="col-md-9 col-sm-12">  
+          <mat-sidenav-container class="example-container">
+            <mat-sidenav #sidenav class="example-sidenav">
+              Jolly good!
+            </mat-sidenav>
+          
+            <div class="example-sidenav-content">
+              <button type="button" mat-button (click)="sidenav.open()">
+                Open sidenav
+              </button>
+            </div>
+          
+          </mat-sidenav-container>
+      </div>
+      </div>
+
+
+      <br>
+      <div>  
+        Paginator <mat-paginator [length]="100"
+          [pageSize]="10"
+          [pageSizeOptions]="[5, 10, 25, 100]">
+        </mat-paginator>
+      </div>
+
+      <!-- <div>
+          <mat-grid-list cols="2" rowHeight="2:1">
+            <mat-grid-tile>Phase 1</mat-grid-tile>
+            <mat-grid-tile>Phase 2</mat-grid-tile>
+            <mat-grid-tile>Phase 3</mat-grid-tile>
+            <mat-grid-tile>Phase 4</mat-grid-tile>
+          </mat-grid-list>
+      </div>
+      <br> -->
+
+      <div>
+          <mat-card>Simple card 1</mat-card>
+          <br>
+          <mat-card>Simple card 2</mat-card>
+      </div>
+      <br>
+
+      <mat-tab-group>
+        <mat-tab label="Tab 1">Content 1</mat-tab>
+        <mat-tab label="Tab 2">Content 2</mat-tab>
+      </mat-tab-group>
+      <br><br>
+      
+      <mat-chip-list>
+        <mat-chip>One fish</mat-chip>
+        <mat-chip>Two fish</mat-chip>
+        <mat-chip color="primary" selected="true">Primary fish</mat-chip>
+        <mat-chip color="accent" selected="true">Accent fish</mat-chip>
+      </mat-chip-list>
+
+      <br><br>
+      <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+      <br>
+      <mat-icon>home</mat-icon>
+      <br>
+      <div class="col-md-6" style="text-align:center">
+          <mat-spinner></mat-spinner>
+      </div>
+      
+
+      <div class="col-md-6 col-sm-6">  
+          <mat-toolbar>Home</mat-toolbar>
+          <br>
+          <mat-toolbar>Customer</mat-toolbar>
+          <br>
+          <mat-toolbar>Project</mat-toolbar>
+      </div>
+
+
+      <div class="col-md-6 col-sm-6">
+          <div class="example-container ">
+              <h5>Form Fields</h5>
+            <mat-form-field>
+              <input matInput placeholder="Input">
+            </mat-form-field>
+          <br>
+            <mat-form-field>
+              <textarea matInput placeholder="Textarea"></textarea>
+            </mat-form-field>
+            <br>
+            <!-- <mat-form-field>
+              <mat-select placeholder="Select">
+                <mat-option value="option">Option</mat-option>
+              </mat-select>
+            </mat-form-field>  -->
+          </div> 
+          <form class="example-form">
+              <mat-form-field class="example-full-width">
+                <input matInput placeholder="Favorite flower" value="Lotus">
+              </mat-form-field>
+            </form>
+      </div>
+ 
+
+
+ 
+<!-- 
+<div class="col-md-3 col-xs-6 col-sm-4">
+    <mat-icon>home</mat-icon>
+         
+  </div> -->
+<!-- 
+  <div class="col-md-6">
+      <button mat-raised-button (click)="isLinear = true" id="toggle-linear">Enable linear mode</button>
+      
+      <mat-horizontal-stepper [linear]="isLinear">
+        <mat-step [stepControl]="firstFormGroup">
+          <form [formGroup]="firstFormGroup">
+            <ng-template matStepLabel>Fill out your name</ng-template>
+            <mat-form-field>
+              <input matInput placeholder="Last name, First name" formControlName="firstCtrl" required>
+            </mat-form-field>
+            <div>
+              <button mat-button matStepperNext>Next</button>
+            </div>
+          </form>
+        </mat-step>
+        <mat-step [stepControl]="secondFormGroup">
+          <form [formGroup]="secondFormGroup">
+            <ng-template matStepLabel>Fill out your address</ng-template>
+            <mat-form-field>
+              <input matInput placeholder="Address" formControlName="secondCtrl" required>
+            </mat-form-field>
+            <div>
+              <button mat-button matStepperPrevious>Back</button>
+              <button mat-button matStepperNext>Next</button>
+            </div>
+          </form>
+        </mat-step>
+        <mat-step>
+          <ng-template matStepLabel>Done</ng-template>
+          You are now done.
+          <div>
+            <button mat-button matStepperPrevious>Back</button>
+          </div>
+        </mat-step>
+      </mat-horizontal-stepper>
+      
+  </div>    -->
+
+  
+</div>

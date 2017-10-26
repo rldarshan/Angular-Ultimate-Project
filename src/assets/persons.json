@@ -1,0 +1,36 @@
+	[{
+      "id"   : "1",
+      "name" : "Ruby",
+      "email": "ruby@yahoo.com",
+      "location": "California"
+    },
+
+    {
+      "id"   : "2",
+      "name" : "Rosie",
+      "email": "rosie@gmail.com",
+      "location": "manhatten"
+    },
+
+    {
+      "id"   : "3",
+      "name" : "mary",
+      "email": "ruby@rediffmail.com",
+      "location": "sanfrancico"
+    },
+
+    {
+      "id"   : "4",
+      "name" : "Shalini",
+      "email": "Shalini@hotmail.com",
+      "location": "Madrid"
+    },
+
+    {
+      "id"   : "5",
+      "name" : "Malini",
+      "email": "Malini@yahoo.com",
+      "location": "geneva"
+    }
+  ]
+    

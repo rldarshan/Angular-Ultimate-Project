@@ -1,0 +1,55 @@
+<!-- <base href="/"> -->
+
+
+<style>
+  td, th 
+  {
+    text-align: center;
+  }
+</style>  
+
+<div class="container col-md-6">
+ <h1>Json table</h1>
+<table class="table table-hover table-bordered">
+  <thead class="bg-primary">
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <!-- <th>Picture</th> -->
+        <th>Email</th>
+        <th>Location</th>
+      </tr>
+    </thead>
+    <tbody> 
+       <tr *ngFor="let postmember of persondata">
+                    <td>{{postmember.id}}</td>             
+                    <td>{{postmember.name}}</td>              
+                                <!-- <td><img style="width:6em; height:6em;" class="img img-circle" [src]='member.url' /></td>              -->
+                     <td>{{postmember.email}}</td>   
+                    <td>{{postmember.location}}</td>           
+        </tr>  
+    </tbody> 
+</table> 
+
+<br><br> 
+<h1>Array table</h1>
+<table class="table table-hover table-bordered">
+  <thead class="bg-primary">
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Picture</th>
+        <th>Email</th>
+      </tr>
+    </thead>
+    <tbody> 
+       <tr *ngFor="let member of members">
+                    <td>{{member.id}}</td>             
+                    <td>{{member.name}}</td>              
+                    <td><img style="width:6em; height:6em;" class="img img-circle" [src]='member.url' /></td>             
+                    <td>{{member.email}}</td>             
+        </tr> 
+    </tbody> 
+</table> 
+</div>
+

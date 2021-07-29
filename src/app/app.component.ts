@@ -50,10 +50,11 @@ export class AppComponent implements OnInit {
   public person1 = new Person;
   public person2 = new Person;
   public person3 = new Person;
-  public state = [];
+  public state = new State;
   person = [];
   pop_data = [];
   time;
+  data;
   counter = 0;
    
   settings = {
@@ -121,12 +122,8 @@ export class AppComponent implements OnInit {
     this.listdata();  
     // this.getusers();
     // this.gethero();
-    this.populatedata(this.popdata);
+    this.populatedata();
     // this.popdata();
-
-    this.time = new Observable<string>((observer: Subscriber<string>) => {
-      setInterval(() => observer.next(new Date().toString()), 1000);
-    });
 
   }
 
@@ -165,11 +162,11 @@ export class AppComponent implements OnInit {
     setTimeout(() => {console.log("pop_data==1=="+JSON.stringify(this.pop_data));}, 1000);
   }
 
-  populatedata(populate_data){
-    let pop_data = this._observableservice.populatedata().popdata;
-
-    setTimeout(() => {console.log("populate_data==1=="+JSON.stringify(pop_data));}, 1000);
-    // .subscribe(res => this.state = res);
+  populatedata(){
+    let pop_data1 = this._observableservice.populatedata().subscribe(res => this.state = res);
+    // let pop_data2 = this._observableservice.extractData(this.data);
+    setTimeout(() => {console.log("populate_data==1=="+JSON.stringify(this.state));}, 1000);
+    // setTimeout(() => {console.log("populate_data==2=="+JSON.stringify(pop_data2));}, 1100);
   }
   /*update(pers) {
     this._observableservice.updateperson(pers);

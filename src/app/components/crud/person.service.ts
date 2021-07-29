@@ -16,7 +16,18 @@ export class ReqtypeserviceComponent implements OnInit {
   constructor(private _observableservice2: ObservableService2) {  }
 
   ngOnInit() {
+    console.log("===========calling ngOnInit===========");
     this.listdata();
+  }
+  
+  ngOnDestroy()
+  {
+    console.log("===========calling ngOnDestroy===========");
+  }
+
+  nfAfterViewInit()
+  {
+    console.log("===========calling nfAfterViewInit===========");
   }
 
   listdata() {
@@ -32,7 +43,7 @@ export class ReqtypeserviceComponent implements OnInit {
 
   update(pers) {
       this._observableservice2.updateperson(pers);
-      setTimeout(() => {this.listdata(); this.cancel(pers);this.profileobj = {} ; this.person=null;}, 1000);
+      setTimeout(() => {this.listdata(); this.cancel(pers);this.profileobj = null ; this.person=null;}, 1000);
     }
 
 

@@ -1,11 +1,71 @@
-<h4>Pipes Example</h4>
-<h4>{{name | uppercase}} ---------uppercase pipe</h4>
+<style>
+    td{
+       border:1px solid black;
+    } 
+</style>
+
+<h2 [style.bgColor]="creame">Pipes Example</h2>
+<table style="font-size:18px;">
+    <thead style='background-color: #418bd4; color:white'> 
+        <tr align=center>
+            <td>Example</td>
+            <td>Action</td>
+        </tr>
+    </thead>
+    <tbody>
+    <tr align=center>
+        <td>{{name | uppercase}}</td>
+        <td>uppercase pipe</td>
+    </tr>
+    <tr align=center>
+        <td>{{name | lowercase}}</td>
+        <td>lowercase pipe</td>
+    </tr>
+    <tr align=center>
+        <td>{{day | date}}</td>
+        <td>Displaying date</td>
+    </tr>
+    <tr align=center>
+        <td>{{day | date: 'shortDate'}}</td>
+        <td>Displaying short date</td>
+    </tr>
+    <tr align=center>
+        <td>{{day | date: 'fullDate'}}</td>
+        <td>Displaying full date</td>
+    </tr>
+    <tr align=center>
+        <td>{{day | date: 'fullDate' |uppercase}}</td>
+        <td>capitalized full date</td>
+    </tr>
+    <tr align=center>
+        <td>Time: {{ time | async | date: 'mediumTime'}}</td>
+        <td>using Async</td>
+    </tr>
+    <tr>
+        <td>{{object | json}}</td>
+        <td>Json object</td>
+    </tr>
+    <tr align=center>
+        <td>{{arr | sort: 'ascending'}}</td>
+        <td>Ascending</td>
+    </tr>
+    <tr align=center>
+        <td>{{arr | sort: 'descending'}}</td>
+        <td>Descending</td>
+    </tr>
+    </tbody>
+</table>
+<!-- <h4>{{name | uppercase}} ---------uppercase pipe</h4>
 <h4>{{name | lowercase}} ------------lowercase pipe</h4>
 <h4>{{day}}</h4>
 <h4>{{day | date}} -------Displaying date</h4>
 <h4>{{day | date: 'shortDate'}} --------Displaying short date</h4>
 <h4>{{day | date: 'fullDate'}} ---------Displaying full date</h4>
 <h4>{{day | date: 'fullDate' |uppercase}} ---------Pipe chaining Displaying capitalized full date</h4>
+
+<div style="text-align:center"><code>observable|async</code>: Time: {{ time | async | date: 'mediumTime'}}</div> 
+<br>
+<hr>
 <h4>Sorting</h4>
 <h4>{{arr | sort: 'ascending'}} ---Ascending </h4>
-<h4>{{arr | sort: 'descending'}} ---Descending </h4>
+<h4>{{arr | sort: 'descending'}} ---Descending </h4> -->

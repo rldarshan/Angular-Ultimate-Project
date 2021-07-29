@@ -56,7 +56,6 @@ import { MatInputModule, MatButtonModule, MatProgressSpinnerModule, MatProgressB
   MatDatepickerModule,
   MatFormFieldModule
 } from '@angular/material'; */
-import { MypipePipe } from './pipe/mypipe.pipe';
 
 @NgModule({
   declarations: [
@@ -70,11 +69,10 @@ import { MypipePipe } from './pipe/mypipe.pipe';
     AmchartComponent,
     MyclassComponent,
     MaterialComponent,
-    MypipePipe,
     UserComponent,
     UserDetailsComponent,
     UserListComponent,
-    UserNewComponent,
+    UserNewComponent, 
     UserEditComponent,
     LoginFormComponent,
     PipesdemoComponent,

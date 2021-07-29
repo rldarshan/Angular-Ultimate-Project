@@ -23,16 +23,16 @@ export class ObservableService2 {
             });
         }
 
-
+  
         createperson(pers: Person) {
-            const post = {requesttype : 'add', name : pers.name,   age: pers.age,  id:pers.id,    salary: pers.salary};
-            // console.log('post in add==' + JSON.stringify(post));
+            const post = {requesttype : 'add', name : pers.name, id:pers.id,  age: pers.age,   salary: pers.salary};
+            console.log('post in add==' + JSON.stringify(post));
              this._http.post(this._url, JSON.stringify(post))
                .subscribe(res => {
-                console.log('create person===' + JSON.stringify(post));
+                console.log('create person===' + JSON.stringify(res));
             });
         }
-
+ 
 
         deleteperson(person1: Person) {
             console.log('deleteperson  id =============' + person1.id);

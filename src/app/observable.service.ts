@@ -59,14 +59,24 @@ export class ObservableService{
          populatedata =  function()
         {
             let post = {requesttype:'populatedata'};
-            let pdata = "umadata";
+            // let pdata = "umadata";
             // setTimeout(() => {console.log("populate_data==1=="+JSON.stringify(populate_data));}, 1000);  
-            return this._http.post(this._url,JSON.stringify(post)).subscribe((res:Response) => 
+            return this._http.post(this._url,JSON.stringify(post))
+            /* .subscribe((res:Response) => 
                 {
                     console.log("populatedata==2=="+JSON.stringify(res));
-                });  
-            // .map((data:Response) => data.json()).catch(this.handleError);
+
+                });  */ 
+                .map(this.extractData).catch(this.handleError);
         } 
+        
+        public extractData(res: Response) {
+            res =>{
+            let body = res.json();
+            console.log("body===="+JSON.stringify(body.populatestate));
+            return body.data || {};
+            }
+        }
 
         popdata(): Promise<any> {
             const url = 'http://192.168.0.18:6040/springboot-ws-jpa/employee';
@@ -115,10 +125,10 @@ export class ObservableService{
                 console.log("Add response====="+res);
             });
         }  */
-        
+         
         createperson(pers: Person) {
-            const post = {requesttype : 'add', name : pers.name,   age: pers.age,   salary: pers.salary};
-            // console.log('post in add==' + JSON.stringify(post));
+            const post = {requesttype : 'add', name : pers.name, id:'',  age: pers.age,   salary: pers.salary};
+            console.log('post in add==' + JSON.stringify(post));
              this._http.post(this._url, JSON.stringify(post))
                .subscribe(res => {
                 console.log('create person===' + JSON.stringify(post));

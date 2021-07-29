@@ -2,27 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { AppService } from './app/app.service';
 import { ObservableService } from './observable.service';
 import * as $ from 'jquery';
-import { DatePipe } from '@angular/common';
+
 import { NgRedux } from 'ng2-redux';
 import { IAppstate } from './store';
 import { INCREMENT } from './actions';
 import { Router } from '@angular/router';
-// import RX from 'rxjs'
-// import { PostService } from './post/post.service';
-// import { PostListComponent } from './post/post-list.component';
-// import {PostComponent} from './post/post.component'
-import 'rxjs/add/operator/catch';
-import 'rxjs/add/operator/map';
-import 'rxjs/add/operator/toPromise';
-import { Pipe, PipeTransform } from '@angular/core';
-import { SortPipe } from './pipesdemo/arr.sort';
-import { PipesdemoComponent } from './pipesdemo/pipesdemo.component';
-import { AsyncPipe } from '@angular/common';
-// import {HttpClient} from '@angular/common/http';
-import { Observable, Subscriber } from 'rxjs';
+
 import { Person } from "./person";
 import { State } from "./state";
-import { clone } from "lodash";
 
 @Component({
   selector: 'app-root',

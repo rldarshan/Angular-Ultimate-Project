@@ -32,15 +32,16 @@ import { UserEditComponent } from './user/user-edit/user-edit.component';
 import { ReqtypeserviceComponent } from './components/crud/person.service';
 import { AppComponent } from './app.component';
 // import { AsyncObservablePipeComponent } from './app.component';
-import { TableComponent } from './components/table/table.component';
-import { DataComponent } from './components/data/data.component';
-import { LittleTourComponent } from './components/data/littletour.component';
-import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
-import { HighlightComponent } from './components/highlight.component';
 import { HighlightDirective } from './highlight.directive';
+
+import { DataComponent } from './components/data/data.component';
+import { TableComponent } from './components/table/table.component';
+import { HighlightComponent } from './components/highlight.component';
 import { AmchartComponent } from './components/amchart/amchart.component';
 import { MaterialComponent } from './components/material/material.component';
+import { LittleTourComponent } from './components/data/littletour.component';
 import { LoginFormComponent } from './components/login-form/login-form.component';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 
 import { MatCheckboxModule, MatSlideToggleModule, MatRadioModule, MatTabsModule, MatChipsModule, MatIconModule } from '@angular/material';
 import { MatDatepickerModule, MatNativeDateModule, MatFormFieldModule, MatGridListModule, MatCardModule } from '@angular/material';

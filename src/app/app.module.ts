@@ -1,9 +1,9 @@
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes} from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 import { HttpModule } from '@angular/http';
-import {HttpClientModule} from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 // import * as $ from 'jquery/dist/jquery.js';
 import { FormsModule } from '@angular/forms';
 import { AmChartsModule } from '@amcharts/amcharts3-angular';
@@ -19,7 +19,7 @@ import { AsyncPipe } from '@angular/common';
 import { ObservableService } from './observable.service';
 import { ObservableService2 } from './observable2.service';
 
-import {enableProdMode} from '@angular/core';
+import { enableProdMode } from '@angular/core';
 enableProdMode();
 
 import { AppService } from './app/app.service';
@@ -47,8 +47,8 @@ import { LoginFormComponent } from './components/login-form/login-form.component
 
 import { MatCheckboxModule, MatSlideToggleModule, MatRadioModule, MatTabsModule, MatChipsModule, MatIconModule } from '@angular/material';
 import { MatDatepickerModule, MatNativeDateModule, MatFormFieldModule, MatGridListModule, MatCardModule } from '@angular/material';
-import {MatSelectModule, MatSliderModule, MatMenuModule, MatSidenavModule, MatToolbarModule, MatPaginatorModule } from '@angular/material';
-import { MatInputModule, MatButtonModule, MatProgressSpinnerModule, MatProgressBarModule, } from '@angular/material' ;
+import { MatSelectModule, MatSliderModule, MatMenuModule, MatSidenavModule, MatToolbarModule, MatPaginatorModule } from '@angular/material';
+import { MatInputModule, MatButtonModule, MatProgressSpinnerModule, MatProgressBarModule, } from '@angular/material';
 /* import {MatButtonModule,
   MatCheckboxModule,
   MatSlideToggleModule,
@@ -72,7 +72,7 @@ import { MatInputModule, MatButtonModule, MatProgressSpinnerModule, MatProgressB
     UserComponent,
     UserDetailsComponent,
     UserListComponent,
-    UserNewComponent, 
+    UserNewComponent,
     UserEditComponent,
     LoginFormComponent,
     PipesdemoComponent,
@@ -85,13 +85,13 @@ import { MatInputModule, MatButtonModule, MatProgressSpinnerModule, MatProgressB
     FormsModule,
     BrowserAnimationsModule,
     RouterModule.forRoot([
-      {path: 'table', component: TableComponent},
-      {path: 'data', component: DataComponent},
-      {path: 'pagenotfound', component: PageNotFoundComponent},
-      {path: 'amchart', component: AmchartComponent},
-      {path: 'material', component: MaterialComponent},
-      {path: 'form-validation', component: LoginFormComponent},
-      { path: 'crud', component: ReqtypeserviceComponent}
+      { path: 'table', component: TableComponent },
+      { path: 'data', component: DataComponent },
+      { path: 'pagenotfound', component: PageNotFoundComponent },
+      { path: 'amchart', component: AmchartComponent },
+      { path: 'material', component: MaterialComponent },
+      { path: 'form-validation', component: LoginFormComponent },
+      { path: 'crud', component: ReqtypeserviceComponent }
     ]),
     HttpModule,
     HttpClientModule,

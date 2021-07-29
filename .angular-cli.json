@@ -25,13 +25,12 @@
         "styles.css"
       ],
       "scripts": [
-        "../node_modules/jquery/dist/jquery.min.js",
+        "assets/jquery-3.1.1.min.js",
         "../node_modules/bootstrap/dist/js/bootstrap.min.js",
-        "../node_modules/amcharts/dist/amcharts/amcharts.js",
-        "../node_modules/amcharts/dist/amcharts/serial.js",
-        "../node_modules/amcharts/dist/amcharts/gantt.js",
-        "../node_modules/amcharts/dist/amcharts/themes/light.js",
-        "../node_modules/amcharts/dist/amcharts/plugins/export/export.min.js"
+        "assets/amcharts/amcharts.js",
+        "assets/amcharts/serial.js",
+        "assets/amcharts/themes_light.js",
+        "assets/amcharts/export.min.js"
       ],
       "environmentSource": "environments/environment.ts",
       "environments": {

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AppService } from './app/app.service';
 import { ObservableService } from './observable.service';
-import * as $ from 'jquery/dist/jquery.js';
+import * as $ from 'jquery';
 import { DatePipe } from '@angular/common';
 import { NgRedux } from 'ng2-redux';
 import { IAppstate } from './store';

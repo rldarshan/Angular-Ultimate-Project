@@ -4,18 +4,16 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
-// import * as $ from 'jquery/dist/jquery.js';
+
 import { FormsModule } from '@angular/forms';
 import { AmChartsModule } from '@amcharts/amcharts3-angular';
-import { Select2Module } from 'ng2-select2';
+// import { Select2Module } from 'ng2-select2';
 import { NgRedux, NgReduxModule } from 'ng2-redux';
 import { IAppstate, rootReducer, INITIAL_STATE } from './store';
-import { Ng2SmartTableModule } from 'ng2-smart-table';
+// import { Ng2SmartTableModule } from 'ng2-smart-table';
 
-import { Pipe, PipeTransform } from '@angular/core';
 import { SortPipe } from './pipesdemo/arr.sort';
 import { PipesdemoComponent } from './pipesdemo/pipesdemo.component';
-import { AsyncPipe } from '@angular/common';
 import { ObservableService } from './observable.service';
 import { ObservableService2 } from './observable2.service';
 
@@ -96,9 +94,9 @@ import { MatInputModule, MatButtonModule, MatProgressSpinnerModule, MatProgressB
     HttpModule,
     HttpClientModule,
     AmChartsModule,
-    Select2Module,
+    // Select2Module,
     NgReduxModule,
-    Ng2SmartTableModule,
+    // Ng2SmartTableModule,
 
     MatInputModule,
     MatButtonModule,

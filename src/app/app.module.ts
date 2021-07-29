@@ -39,7 +39,6 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
 import { HighlightComponent } from './components/highlight.component';
 import { HighlightDirective } from './highlight.directive';
 import { AmchartComponent } from './components/amchart/amchart.component';
-import { MyclassComponent } from './myclass/myclass.component';
 import { MaterialComponent } from './components/material/material.component';
 import { LoginFormComponent } from './components/login-form/login-form.component';
 
@@ -65,7 +64,6 @@ import { MatInputModule, MatButtonModule, MatProgressSpinnerModule, MatProgressB
     PageNotFoundComponent,
     HighlightDirective,
     AmchartComponent,
-    MyclassComponent,
     MaterialComponent,
     UserComponent,
     UserDetailsComponent,

@@ -40,33 +40,33 @@ import { Book } from './book';
 } 
 '] */
 })
-export class ObservableComponent implements OnInit { 
+export class ObservableComponent implements OnInit {
    books: Book[];
    errorMessage: String;
    bookName: String;
-   book = new Book();   
+   book = new Book();
    constructor(private bookService: BookService) { }
    ngOnInit(): void {
-        this.fetchBooks();
+      this.fetchBooks();
    }
    fetchBooks(): void {
-        this.bookService.getBooksWithObservable()
-	    .subscribe( books => this.books = books,
-                        error => this.errorMessage = <any>error);    
+      this.bookService.getBooksWithObservable()
+         .subscribe(books => this.books = books,
+            error => this.errorMessage = <any>error);
    }
    addBook(): void {
-     this.bookService.addBookWithObservable(this.book)
-	     .subscribe( book => {
-			            this.fetchBooks();		
-                                    this.reset();   
-		                    this.bookName = book.name;						   
-			 },
-                         error => this.errorMessage = <any>error);
+      this.bookService.addBookWithObservable(this.book)
+         .subscribe(book => {
+            this.fetchBooks();
+            this.reset();
+            this.bookName = book.name;
+         },
+            error => this.errorMessage = <any>error);
    }
    private reset() {
-           this.book.id = null;	 
-	   this.book.name = null;
-	   this.errorMessage = null;
-	   this.bookName = null;
+      this.book.id = null;
+      this.book.name = null;
+      this.errorMessage = null;
+      this.bookName = null;
    }
 } 

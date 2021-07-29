@@ -9,24 +9,22 @@ import { Person } from '../../person';
 })
 export class ReqtypeserviceComponent implements OnInit {
 
-  public profileobj: any = {name: '', age: '', salary: '' , id: ''};
+  public profileobj: any = { name: '', age: '', salary: '', id: '' };
   person: Person[];
   isadd: Boolean = true;
   isedit: boolean;
-  constructor(private _observableservice2: ObservableService2) {  }
+  constructor(private _observableservice2: ObservableService2) { }
 
   ngOnInit() {
     console.log("===========calling ngOnInit===========");
     this.listdata();
   }
-  
-  ngOnDestroy()
-  {
+
+  ngOnDestroy() {
     console.log("===========calling ngOnDestroy===========");
   }
 
-  nfAfterViewInit()
-  {
+  nfAfterViewInit() {
     console.log("===========calling nfAfterViewInit===========");
   }
 
@@ -35,16 +33,16 @@ export class ReqtypeserviceComponent implements OnInit {
   }
 
 
-    create(pers) {
+  create(pers) {
     this._observableservice2.createperson(pers);
-    setTimeout(() => {this.listdata(); this.profileobj = {}; this.person=null;}, 1000);
-    }
+    setTimeout(() => { this.listdata(); this.profileobj = {}; this.person = null; }, 1000);
+  }
 
 
   update(pers) {
-      this._observableservice2.updateperson(pers);
-      setTimeout(() => {this.listdata(); this.cancel(pers);this.profileobj = null ; this.person=null;}, 1000);
-    }
+    this._observableservice2.updateperson(pers);
+    setTimeout(() => { this.listdata(); this.cancel(pers); this.profileobj = null; this.person = null; }, 1000);
+  }
 
 
   delete(pers) {
@@ -56,9 +54,9 @@ export class ReqtypeserviceComponent implements OnInit {
   cancel(pers) {
     this.isadd = true;
     this.isedit = false;
-  this.profileobj = {};
-  // $('.ng-dirty()').val('');
-}
+    this.profileobj = {};
+    // $('.ng-dirty()').val('');
+  }
 
 
   ShowEditPersonForm(person: Person) {

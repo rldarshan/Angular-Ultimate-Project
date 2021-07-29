@@ -16,24 +16,24 @@ export class DataComponent implements OnInit {
   mystyle: any;
   colorName = 'red';
 
-  constructor(private _router: Router){}
-    onBack(): void
-    {
+  constructor(private _router: Router) { }
+
+  onBack(): void {
     this._router.navigate(['/table']);
-    }
+  }
 
   ngOnInit() {
     this.getMyStyles();
 
-     /*  $('[data-toggle="modal"]').click(function(){
-        setTimeout(function(){
-         console.log("Inside data.component.ts\nthis==="+this);
-        },200);
-      }); */
+    /*  $('[data-toggle="modal"]').click(function(){
+       setTimeout(function(){
+        console.log("Inside data.component.ts\nthis==="+this);
+       },200);
+     }); */
 
   }
 
-  ngstyle(){
+  ngstyle() {
     // this.colorFlag = 'yellow';
     // this.isSmall = false;
     // this.small = 10;
@@ -41,7 +41,7 @@ export class DataComponent implements OnInit {
     // console.log("inside ngstyle");
     // this.getMyStyles();
 
-    this.mystyle = {'color': 'red'};
+    this.mystyle = { 'color': 'red' };
   }
 
 
@@ -54,19 +54,19 @@ export class DataComponent implements OnInit {
     };
     console.log('Inside getmystyle');
     return myStyles;
-}
-  callmodal(val){
-    console.log('value====' +val);
+  }
+  callmodal(val) {
+    console.log('value====' + val);
     // let myContainer = <HTMLElement> document.querySelector(".modal-body");
     // myContainer.innerHTML = val;
 
     // document.getElementsByClassName('modal-body').innerText = value; 
-      // console.log(myContainer.innerHTML)
+    // console.log(myContainer.innerHTML)
   }
 
-  onkeyup(){console.log('key up called');}
+  onkeyup() { console.log('key up called'); }
 
-  ontab(){console.log("Tab Entered")}
+  ontab() { console.log("Tab Entered") }
 }
 
 

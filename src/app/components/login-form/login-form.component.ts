@@ -9,7 +9,7 @@ export class LoginFormComponent implements OnInit {
 
   constructor() { }
 
-  onSubmit(value: any){
+  onSubmit(value: any) {
     alert("submitted");
     console.log(value);
   }

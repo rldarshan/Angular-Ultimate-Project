@@ -46,7 +46,7 @@ export class AppComponent implements OnInit {
   loadpage = '<h3>loading....</h3>';
   color: any;
   private chart: any;
-  public profileobj: any = {name: '', age: '', salary: '', requesttype: ''};
+  public profileobj: any = { name: '', age: '', salary: '', requesttype: '' };
   public person1 = new Person;
   public person2 = new Person;
   public person3 = new Person;
@@ -56,10 +56,10 @@ export class AppComponent implements OnInit {
   time;
   data;
   counter = 0;
-   
+
   settings = {
     // mode:'external',
-    editable:'false',
+    editable: 'false',
     columns: {
       id: {
         title: 'ID'
@@ -87,20 +87,20 @@ export class AppComponent implements OnInit {
   // , private newservice1: PostService,  private newservice2: PostListComponent
 
   constructor(private newservice: AppService, private ngRedux: NgRedux<IAppstate>,
-     private _observableservice: ObservableService, private _router: Router) {}
+    private _observableservice: ObservableService, private _router: Router) { }
 
   increment() {
-    this.ngRedux.dispatch({type: INCREMENT });
+    this.ngRedux.dispatch({ type: INCREMENT });
   }
- 
+
   toggleshow() {
     this.isshow = !this.isshow;
   }
 
   toggleshowedit(per) {
     this.isedit = !this.isedit;
-    this.person3=per;
-    console.log("person3======"+JSON.stringify(this.person));
+    this.person3 = per;
+    console.log("person3======" + JSON.stringify(this.person));
   }
 
   toggleshoweditnew() {
@@ -115,11 +115,11 @@ export class AppComponent implements OnInit {
     // console.log(this.newservice2.getPosts());
 
     // this._observableservice.getPersons().subscribe(resPersonsData => this.person = resPersonsData);
-    
+
     // this._router.navigate(['/table']);
     // this.formsubmit();
-    
-    this.listdata();  
+
+    this.listdata();
     // this.getusers();
     // this.gethero();
     this.populatedata();
@@ -127,9 +127,8 @@ export class AppComponent implements OnInit {
 
   }
 
-  formsubmit()
-  {
-    $("#form1").submit(function(event){
+  formsubmit() {
+    $("#form1").submit(function (event) {
       event.preventDefault();
       console.log("Inside submit");
       $("#form1").serialize();
@@ -137,80 +136,74 @@ export class AppComponent implements OnInit {
       console.log($("#form1").serialize());
     });
   }
- 
- onchange(id)
- {
-   this._observableservice.onchange(id);
- }
 
- getusers()
- {
-  this._observableservice.getusers().subscribe(resPersonsData => this.person = resPersonsData);
- }
+  onchange(id) {
+    this._observableservice.onchange(id);
+  }
 
- gethero()
- {
-   this._observableservice.getHero().then(response => response.json().data as Person)
- }
-  listdata(){
+  getusers() {
+    this._observableservice.getusers().subscribe(resPersonsData => this.person = resPersonsData);
+  }
+
+  gethero() {
+    this._observableservice.getHero().then(response => response.json().data as Person)
+  }
+  listdata() {
     this._observableservice.getPersons().subscribe(resPersonsData => this.person = resPersonsData);
   }
 
-  popdata()
-  {
+  popdata() {
     this._observableservice.popdata().then(response => this.pop_data = response);
-    setTimeout(() => {console.log("pop_data==1=="+JSON.stringify(this.pop_data));}, 1000);
+    setTimeout(() => { console.log("pop_data==1==" + JSON.stringify(this.pop_data)); }, 1000);
   }
 
-  populatedata(){
+  populatedata() {
     let pop_data1 = this._observableservice.populatedata().subscribe(res => this.state = res);
     // let pop_data2 = this._observableservice.extractData(this.data);
-    setTimeout(() => {console.log("populate_data==1=="+JSON.stringify(this.state));}, 1000);
+    setTimeout(() => { console.log("populate_data==1==" + JSON.stringify(this.state)); }, 1000);
     // setTimeout(() => {console.log("populate_data==2=="+JSON.stringify(pop_data2));}, 1100);
   }
   /*update(pers) {
     this._observableservice.updateperson(pers);
    }*/
-   
-  add1(e)
-  {
+
+  add1(e) {
     e.preventDefault();
     console.log(JSON.stringify(e));
     console.log(e.serialize());
   }
 
-   add(person1):void{
-     console.log("Inside add ==========");
-     this._observableservice.addperson(person1);
-     setTimeout(() => {
-       this.listdata();
+  add(person1): void {
+    console.log("Inside add ==========");
+    this._observableservice.addperson(person1);
+    setTimeout(() => {
+      this.listdata();
       //  this.getusers();
       // this.gethero();
       $(".ng-dirty").val("");
-      }, 1000);
-   }
+    }, 1000);
+  }
 
 
-  delete(pers) {  
+  delete(pers) {
     console.log("Inside delete ==========");
     this._observableservice.deleteperson(pers);
     setTimeout(() => this.listdata(), 1000);
   }
- 
+
   /* getpersondata(){
     this._observableservice.getperson(pers);
   } */
 
- editnew(e)
-{
-  this.toggleshoweditnew();
-}
-updaterow(e){
-  console.log("Inside Update =========="+e);
-}
+  editnew(e) {
+    this.toggleshoweditnew();
+  }
+  updaterow(e) {
+    console.log("Inside Update ==========" + e);
+  }
 
   edit(per) {
-    console.log("per======"+JSON.stringify(per));
+    console.log("per======" + JSON.stringify(per));
     this.toggleshowedit(per);
   }
 

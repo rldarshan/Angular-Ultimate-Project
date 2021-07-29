@@ -9,11 +9,12 @@ import { Observable, Subscriber } from 'rxjs';
   styleUrls: ['./pipesdemo.component.css']
 })
 export class PipesdemoComponent implements OnInit {
-name = 'Angular';
-day = new Date(1992, 3, 15);
-arr = [4, 2, 5, 3, 1];
-time;
-object: Object = {foo: 'bar', baz: 'qux', nested: {xyz: 3, numbers: [1, 2, 3, 4, 5]}};
+  name = 'Angular';
+  day = new Date(1992, 3, 15);
+  arr = [4, 2, 5, 3, 1];
+  time;
+  object: Object = { foo: 'bar', baz: 'qux', nested: { xyz: 3, numbers: [1, 2, 3, 4, 5] } };
+
   constructor() { }
 
   ngOnInit() {
@@ -23,4 +24,3 @@ object: Object = {foo: 'bar', baz: 'qux', nested: {xyz: 3, numbers: [1, 2, 3, 4,
   }
 
 }
- 

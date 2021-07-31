@@ -50,13 +50,13 @@ export class personCrudComponent implements OnInit {
 
   delete(pers) {
     this._observableservice2.deleteperson(pers).subscribe(res => {
-      if (res.status != 400) {
+      // if (res.status != 400) {
         this.person = this.person.filter((item, index) => {
           if (pers['_id'] != item._id) {
             return item;
           }
         })
-      }
+      // }
     });
   }
 

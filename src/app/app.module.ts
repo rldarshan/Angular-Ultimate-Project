@@ -29,7 +29,7 @@ import { UserListComponent } from './user/user-list/user-list.component';
 import { UserNewComponent } from './user/user-new/user-new.component';
 import { UserEditComponent } from './user/user-edit/user-edit.component';
 
-import { ReqtypeserviceComponent } from './components/crud/person.service';
+import { personCrudComponent } from './components/crud/person-crud.component';
 import { AppComponent } from './app.component';
 // import { AsyncObservablePipeComponent } from './app.component';
 import { HighlightDirective } from './highlight.directive';
@@ -74,7 +74,7 @@ import { MatInputModule, MatButtonModule, MatProgressSpinnerModule, MatProgressB
     LoginFormComponent,
     PipesdemoComponent,
     SortPipe,
-    ReqtypeserviceComponent
+    personCrudComponent
     // AsyncObservablePipeComponent
   ],
   imports: [
@@ -88,7 +88,7 @@ import { MatInputModule, MatButtonModule, MatProgressSpinnerModule, MatProgressB
       { path: 'amchart', component: AmchartComponent },
       { path: 'material', component: MaterialComponent },
       { path: 'form-validation', component: LoginFormComponent },
-      { path: 'crud', component: ReqtypeserviceComponent }
+      { path: 'crud', component: personCrudComponent }
     ]),
     HttpModule,
     HttpClientModule,

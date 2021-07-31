@@ -2,47 +2,54 @@ import { Component, OnInit } from '@angular/core';
 import { ObservableService2 } from '../../observable2.service';
 import { Person } from '../../person';
 
-
 @Component({
   selector: 'app-reqtypeservice',
   templateUrl: './reqtypeservice.component.html'
 })
-export class ReqtypeserviceComponent implements OnInit {
+export class personCrudComponent implements OnInit {
 
-  public profileobj: any = { name: '', age: '', salary: '', id: '' };
+  private profileobj: any = { name: '', age: '', salary: '' };
   person: Person[];
   isadd: Boolean = true;
   isedit: boolean;
   constructor(private _observableservice2: ObservableService2) { }
 
   ngOnInit() {
-    console.log("=======   Fetching  all  details from DB   =====");
-    // this.listdata();
+    this.listdata();
   }
 
 
   listdata() {
-    this._observableservice2.getPersons().subscribe(resPersonsData => {
-      this.person = resPersonsData
+    console.log("=======   Fetching  all  details from DB   =====");
+
+    this._observableservice2.getPersons().subscribe(data => {
+      this.person = data['data'];
     });
   }
 
 
   create(pers) {
-    this._observableservice2.createperson(pers);
-    setTimeout(() => { this.listdata(); this.profileobj = {}; this.person = null; }, 1000);
+    pers._id = Math.floor(Math.random() * 1000);
+
+    this._observableservice2.createperson(pers).subscribe(res => {
+      if (res.status == 200) {
+        this.person.push(pers);
+        alert('User Data Added Successfilly...!');
+        this.profileobj = {};
+      }
+    });
   }
 
 
   update(pers) {
     this._observableservice2.updateperson(pers);
-    setTimeout(() => { this.listdata(); this.cancel(pers); this.profileobj = null; this.person = null; }, 1000);
+    // setTimeout(() => { this.listdata(); this.cancel(pers); this.profileobj = null; this.person = null; }, 1000);
   }
 
 
   delete(pers) {
     this._observableservice2.deleteperson(pers);
-    setTimeout(() => this.listdata(), 1000);
+    // setTimeout(() => this.listdata(), 1000);
   }
 
 

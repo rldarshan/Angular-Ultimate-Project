@@ -21,30 +21,20 @@ export class ObservableService2 {
     }
 
     updateperson(person: Person) {
-        const post = { requesttype: 'update', id: person.id, name: person.name, age: person.age, salary: person.salary };
-        console.log('updateperson  id ====' + person.id);
-        this._http.post(this._url, JSON.stringify(post)).subscribe(res => {
-            console.log(res.json());
-        });
+        const post = { requesttype: 'update', id: person._id, name: person.name, age: person.age, salary: person.salary };
+
+        return this._http.post(this._url, JSON.stringify(post));
     }
 
 
-    createperson(pers: Person) {
-        const post = { requesttype: 'add', name: pers.name, id: pers.id, age: pers.age, salary: pers.salary };
-        console.log('post in add==' + JSON.stringify(post));
-        this._http.post(this._url, JSON.stringify(post))
-            .subscribe(res => {
-                console.log('create person===' + JSON.stringify(res));
-            });
+    createperson(data: Person) {
+        const payload = { data };
+        return this._http.post(this._url, payload);
     }
 
 
     deleteperson(person1: Person) {
-        console.log('deleteperson  id =============' + person1.id);
-        const post = { requesttype: 'delete', id: person1.id };
-        this._http.post(this._url, JSON.stringify(post)).subscribe(
-            res => {
-                console.log('deleted successfully' + JSON.stringify(post));
-            });
+        const post = { requesttype: 'delete', id: person1._id };
+        return this._http.post(this._url, JSON.stringify(post));
     }
 }

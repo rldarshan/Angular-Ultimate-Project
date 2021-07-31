@@ -116,7 +116,7 @@ export class ObservableService {
 
     deleteperson(person1: Person) {
 
-        let body = { requesttype: 'delete', id: person1.id };
+        let body = { requesttype: 'delete', id: person1._id };
 
         this._http.post(this._url, JSON.stringify(body))
             .subscribe(res => {
@@ -146,6 +146,6 @@ export class ObservableService {
 
 
     getperson(person1: Person) {
-        return this._http.get(this._url + person1.id).map(data => data.json()).toPromise();
+        return this._http.get(this._url + person1._id).map(data => data.json()).toPromise();
     }
 }

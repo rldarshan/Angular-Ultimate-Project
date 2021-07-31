@@ -93,7 +93,7 @@ export class AppComponent implements OnInit {
 
     // this._router.navigate(['/table']);
 
-    this.listdata();
+    // this.listdata();
     // this.getusers();
     // this.gethero();
     // this.populatedata();

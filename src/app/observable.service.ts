@@ -5,24 +5,25 @@ import { Observable, Subscriber } from 'rxjs';
 import 'rxjs/add/operator/map';
 import { Person } from "./person";
 import { State } from "./state";
+import { environment } from '../environments/environment';
 @Injectable()
 
 export class ObservableService {
     public person1 = new Person;
     public state1 = new State;
-    person = [];
     public stateId: number;
-    // public populate_data:string[] = new Array(); 
+    person = [];
     populate_data: string;
-    private _url: string =
-        // 'assets/persons.json';
-        'http://192.168.0.18:6040/springboot-ws-jpa/employee';
+    private _url: string = environment.apiURL;
+    // 'assets/persons.json';
     //    'https://jsonplaceholder.typicode.com/posts';
+    // public populate_data:string[] = new Array(); 
+
     constructor(private _http: Http, private _httpmodule: HttpModule, private _httpclient: HttpClientModule) { }
 
     getPersons() {
         // return this._http.post(this._url, {requesttype:'listdata'}).map((res: Response) => res.json()); 
-        return this._http.get('http://192.168.0.18:6040/springboot-ws-jpa/employee-list').map((data: Response) => data.json()).catch(this.handleError);
+        return this._http.get(environment.apiURL).map((data: Response) => data.json()).catch(this.handleError);
     }
 
     getusers() {
@@ -33,7 +34,7 @@ export class ObservableService {
     }
 
     getHero(): Promise<any> {
-        const url = 'http://192.168.0.18:6040/springboot-ws-jpa/employee';
+        const url = environment.apiURL;
         return this._http.get(url)
             .toPromise()
             .then(response => response.json().data as Person)
@@ -56,8 +57,6 @@ export class ObservableService {
 
     populatedata = function () {
         let post = { requesttype: 'populatedata' };
-        // let pdata = "umadata";
-        // setTimeout(() => {console.log("populate_data==1=="+JSON.stringify(populate_data));}, 1000);  
         return this._http.post(this._url, JSON.stringify(post))
             /* .subscribe((res:Response) => 
                 {
@@ -76,10 +75,9 @@ export class ObservableService {
     }
 
     popdata(): Promise<any> {
-        const url = 'http://192.168.0.18:6040/springboot-ws-jpa/employee';
         let post = { requesttype: 'populatedata' };
         return this._http
-            .post(url, JSON.stringify(post))
+            .get(this._url, JSON.stringify(post))
             //   .get(url)
             .toPromise()
             .then(response => response.json()).catch(this.handleError);
@@ -107,21 +105,6 @@ export class ObservableService {
     }
 
 
-
-
-    /* createperson(n,ag,sal) {
-        // let post = {title:input.value};
-        // input.value = '';
-        let post = {requesttype:'add',name:n,age:ag,salary:sal};
-        console.log("post====="+post);
-        this._http.post(this._url, JSON.stringify(post))
-        .subscribe(res => {
-            post['id'] = res.json().id;
-            this.person.splice(0, 0, post);
-            console.log("Add response====="+res);
-        });
-    }  */
-
     createperson(pers: Person) {
         const post = { requesttype: 'add', name: pers.name, id: '', age: pers.age, salary: pers.salary };
         console.log('post in add==' + JSON.stringify(post));
@@ -134,20 +117,12 @@ export class ObservableService {
     deleteperson(person1: Person) {
 
         let body = { requesttype: 'delete', id: person1.id };
-        console.log("post=====" + body.requesttype + " " + person1.id);
 
         this._http.post(this._url, JSON.stringify(body))
             .subscribe(res => {
-
-                console.log("delete Response======" + res.json());
-                //  setTimeout(() => this.getPersons().subscribe(resPersonsData => this.person = resPersonsData), 500);
-
-            }
-                /* ,complete =>{
-                    this.getusers().subscribe(resPersonsData => this.person = resPersonsData);
-                    console.log("After Delete====="+this.getPersons());
-                } */
-            );
+                console.log(res.json());
+                alert("User Delete Successfully...!");
+            });
 
 
     }

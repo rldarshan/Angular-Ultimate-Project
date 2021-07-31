@@ -1,18 +1,23 @@
-import { Injectable, Input } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { Http, Response } from '@angular/http';
-import { Observable, Subscriber } from 'rxjs/Rx';
+import { HttpClientModule } from '@angular/common/http';
 import 'rxjs/add/operator/map';
 import { Person } from './person';
+import { environment } from '../environments/environment';
+
 @Injectable()
 
 export class ObservableService2 {
-    private _url = 'http://192.168.0.18:6040/springboot-ws-jpa/employee';
-    constructor(private _http: Http) { }
+    private _url = environment.apiURL;
+
+    constructor(private _http: Http, private httpClient: HttpClientModule) { }
 
     person: Person[];
 
     getPersons() {
-        return this._http.get('http://192.168.0.18:6040/springboot-ws-jpa/employee-list').map((data: Response) => data.json());
+        return this._http.get(this._url).map((data: Response) => {
+            return JSON.parse(data['_body']);
+        });
     }
 
     updateperson(person: Person) {
@@ -42,15 +47,4 @@ export class ObservableService2 {
                 console.log('deleted successfully' + JSON.stringify(post));
             });
     }
-
-
-
-    // populatestates(person) {
-    //     const post = {requesttype : 'populatedata'};
-    //     this._http.post(this._url, JSON.stringify(post)).subscribe(
-    //         res => {
-    //             console.log('populatestates============'+JSON.stringify(post));
-    //         });
-    //            }
-
 }

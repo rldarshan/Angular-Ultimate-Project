@@ -27,17 +27,19 @@ import { State } from "./state";
 
 export class AppComponent implements OnInit {
   title = 'app';
-  isshow: boolean = true;
+  isshow: boolean = false;
   isedit: boolean = false;
   iseditnew: boolean = false;
   loadpage = '<h3>loading....</h3>';
   color: any;
+
   private chart: any;
   public profileobj: any = { name: '', age: '', salary: '', requesttype: '' };
   public person1 = new Person;
   public person2 = new Person;
   public person3 = new Person;
   public state = new State;
+
   person = [];
   pop_data = [];
   time;
@@ -61,13 +63,6 @@ export class AppComponent implements OnInit {
         title: 'Salary'
       }
     }
-    /* ,
-   
-    add:{   },
-
-    edit:{   },
-
-    delete:{   } */
   };
 
 
@@ -94,22 +89,14 @@ export class AppComponent implements OnInit {
     this.iseditnew = !this.iseditnew;
   }
   ngOnInit() {
-    // console.log(this.newservice.success());
-    // console.log(this.newservice.obj);
-    // console.log(this.newservice.fetchuserdata());
-
-    // console.log( this.newservice1.getData());
-    // console.log(this.newservice2.getPosts());
-
     // this._observableservice.getPersons().subscribe(resPersonsData => this.person = resPersonsData);
 
     // this._router.navigate(['/table']);
-    // this.formsubmit();
 
     this.listdata();
     // this.getusers();
     // this.gethero();
-    this.populatedata();
+    // this.populatedata();
     // this.popdata();
 
   }

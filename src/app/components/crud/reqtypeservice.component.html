@@ -22,7 +22,7 @@
   </form>
 
 
-  <table class="table table-hover table-bordered">
+  <table class="table table-hover table-bordered" *ngIf="person">
     <thead class="bg-primary">
       <tr>
         <th>ID</th>
@@ -34,7 +34,7 @@
     </thead>
     <tbody>
       <tr *ngFor="let persondetais of person">
-        <td>{{persondetais.id}}</td>
+        <td>{{persondetais._id}}</td>
         <td>{{persondetais.name}}</td>
         <td>{{persondetais.age}}</td>
         <td>{{persondetais.salary}}</td>

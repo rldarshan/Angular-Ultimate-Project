@@ -7,9 +7,7 @@ export class AppService {
   constructor(private http: Http) { }
 
   fetchuserdata() {
-    //  this.http.get('assets/persons.json').subscribe(
-
-    //   this.http.get('http://192.168.0.18:6040/springboot-ws-jpa/employee').subscribe(
+    //   this.http.get(environment.apiURL).subscribe(
     //    (data) => console.log(data)
     //  )
     console.log('Fech');

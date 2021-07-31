@@ -16,20 +16,15 @@ export class ReqtypeserviceComponent implements OnInit {
   constructor(private _observableservice2: ObservableService2) { }
 
   ngOnInit() {
-    console.log("===========calling ngOnInit===========");
-    this.listdata();
+    console.log("=======   Fetching  all  details from DB   =====");
+    // this.listdata();
   }
 
-  ngOnDestroy() {
-    console.log("===========calling ngOnDestroy===========");
-  }
-
-  nfAfterViewInit() {
-    console.log("===========calling nfAfterViewInit===========");
-  }
 
   listdata() {
-    this._observableservice2.getPersons().subscribe(resPersonsData => this.person = resPersonsData);
+    this._observableservice2.getPersons().subscribe(resPersonsData => {
+      this.person = resPersonsData
+    });
   }
 
 

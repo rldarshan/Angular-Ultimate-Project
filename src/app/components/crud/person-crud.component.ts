@@ -29,11 +29,12 @@ export class personCrudComponent implements OnInit {
 
 
   create(pers) {
-    pers._id = Math.floor(Math.random() * 1000);
+    pers._id = Math.floor(Math.random() * 100000);
 
     this._observableservice2.createperson(pers).subscribe(res => {
       if (res.status == 200) {
-        this.person.push(pers);
+        // this.person.push(pers);
+        this.listdata();
         alert('User Data Added Successfilly...!');
         this.profileobj = {};
       }
@@ -48,8 +49,15 @@ export class personCrudComponent implements OnInit {
 
 
   delete(pers) {
-    this._observableservice2.deleteperson(pers);
-    // setTimeout(() => this.listdata(), 1000);
+    this._observableservice2.deleteperson(pers).subscribe(res => {
+      if (res.status != 400) {
+        this.person = this.person.filter((item, index) => {
+          if (pers['_id'] != item._id) {
+            return item;
+          }
+        })
+      }
+    });
   }
 
 

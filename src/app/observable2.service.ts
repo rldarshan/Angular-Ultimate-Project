@@ -33,8 +33,12 @@ export class ObservableService2 {
     }
 
 
-    deleteperson(person1: Person) {
-        const post = { requesttype: 'delete', id: person1._id };
-        return this._http.post(this._url, JSON.stringify(post));
+    deleteperson(person: Person) {
+        // const post = { requesttype: 'delete', id: person1._id };
+
+        // this._url
+        return this._http.post('//localhost:5000', JSON.stringify(person._id)).map((data: Response) => {
+            return JSON.parse(data['_body']);
+        });
     }
 }

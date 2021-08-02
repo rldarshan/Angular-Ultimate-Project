@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { AppService } from './app/app.service';
 import { ObservableService } from './observable.service';
 import * as $ from 'jquery';
 
@@ -68,7 +67,7 @@ export class AppComponent implements OnInit {
 
   // , private newservice1: PostService,  private newservice2: PostListComponent
 
-  constructor(private newservice: AppService, private ngRedux: NgRedux<IAppstate>,
+  constructor(private ngRedux: NgRedux<IAppstate>,
     private _observableservice: ObservableService, private _router: Router) { }
 
   increment() {

@@ -20,7 +20,6 @@ import { ObservableService2 } from './observable2.service';
 import { enableProdMode } from '@angular/core';
 enableProdMode();
 
-import { AppService } from './app/app.service';
 
 import { personCrudComponent } from './components/crud/person-crud.component';
 import { AppComponent } from './app.component';
@@ -107,7 +106,7 @@ import { MatInputModule, MatButtonModule, MatProgressSpinnerModule, MatProgressB
     MatPaginatorModule
   ],
   // exports:[MatButtonModule, MatCheckboxModule],
-  providers: [AppService, ObservableService, ObservableService2],
+  providers: [ObservableService, ObservableService2],
   bootstrap: [AppComponent]
 
 })

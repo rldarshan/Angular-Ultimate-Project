@@ -22,12 +22,6 @@ enableProdMode();
 
 import { AppService } from './app/app.service';
 
-import { UserService } from './user/user.service';
-import { UserDetailsComponent } from './user/user-details/user-details.component';
-import { UserListComponent } from './user/user-list/user-list.component';
-import { UserNewComponent } from './user/user-new/user-new.component';
-import { UserEditComponent } from './user/user-edit/user-edit.component';
-
 import { personCrudComponent } from './components/crud/person-crud.component';
 import { AppComponent } from './app.component';
 // import { AsyncObservablePipeComponent } from './app.component';
@@ -63,10 +57,7 @@ import { MatInputModule, MatButtonModule, MatProgressSpinnerModule, MatProgressB
     HighlightDirective,
     AmchartComponent,
     MaterialComponent,
-    UserDetailsComponent,
-    UserListComponent,
-    UserNewComponent,
-    UserEditComponent,
+
     LoginFormComponent,
     PipesdemoComponent,
     SortPipe,
@@ -116,7 +107,7 @@ import { MatInputModule, MatButtonModule, MatProgressSpinnerModule, MatProgressB
     MatPaginatorModule
   ],
   // exports:[MatButtonModule, MatCheckboxModule],
-  providers: [AppService, ObservableService, ObservableService2, UserService],
+  providers: [AppService, ObservableService, ObservableService2],
   bootstrap: [AppComponent]
 
 })

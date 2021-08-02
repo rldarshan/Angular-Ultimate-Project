@@ -23,7 +23,6 @@ enableProdMode();
 import { AppService } from './app/app.service';
 
 import { UserService } from './user/user.service';
-import { UserComponent } from './user/user.component';
 import { UserDetailsComponent } from './user/user-details/user-details.component';
 import { UserListComponent } from './user/user-list/user-list.component';
 import { UserNewComponent } from './user/user-new/user-new.component';
@@ -64,7 +63,6 @@ import { MatInputModule, MatButtonModule, MatProgressSpinnerModule, MatProgressB
     HighlightDirective,
     AmchartComponent,
     MaterialComponent,
-    UserComponent,
     UserDetailsComponent,
     UserListComponent,
     UserNewComponent,

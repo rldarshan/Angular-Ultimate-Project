@@ -89,101 +89,17 @@ export class AppComponent implements OnInit {
     this.iseditnew = !this.iseditnew;
   }
   ngOnInit() {
-    // this._observableservice.getPersons().subscribe(resPersonsData => this.person = resPersonsData);
-
-    // this._router.navigate(['/table']);
-
-    // this.listdata();
-    // this.getusers();
-    // this.gethero();
-    // this.populatedata();
-    // this.popdata();
 
   }
 
-  formsubmit() {
-    $("#form1").submit(function (event) {
-      event.preventDefault();
-      console.log("Inside submit");
-      $("#form1").serialize();
-      console.log(JSON.stringify($("#form1")));
-      console.log($("#form1").serialize());
-    });
-  }
+  // formsubmit() {
+  //   $("#form1").submit(function (event) {
+  //     event.preventDefault();
+  //     console.log("Inside submit");
+  //     $("#form1").serialize();
+  //     console.log(JSON.stringify($("#form1")));
+  //     console.log($("#form1").serialize());
+  //   });
+  // }
 
-  onchange(id) {
-    this._observableservice.onchange(id);
-  }
-
-  getusers() {
-    this._observableservice.getusers().subscribe(resPersonsData => this.person = resPersonsData);
-  }
-
-  gethero() {
-    this._observableservice.getHero().then(response => response.json().data as Person)
-  }
-  listdata() {
-    this._observableservice.getPersons().subscribe(resPersonsData => this.person = resPersonsData);
-  }
-
-  popdata() {
-    this._observableservice.popdata().then(response => this.pop_data = response);
-    setTimeout(() => { console.log("pop_data==1==" + JSON.stringify(this.pop_data)); }, 1000);
-  }
-
-  populatedata() {
-    let pop_data1 = this._observableservice.populatedata().subscribe(res => this.state = res);
-    // let pop_data2 = this._observableservice.extractData(this.data);
-    setTimeout(() => { console.log("populate_data==1==" + JSON.stringify(this.state)); }, 1000);
-    // setTimeout(() => {console.log("populate_data==2=="+JSON.stringify(pop_data2));}, 1100);
-  }
-  /*update(pers) {
-    this._observableservice.updateperson(pers);
-   }*/
-
-  add1(e) {
-    e.preventDefault();
-    console.log(JSON.stringify(e));
-    console.log(e.serialize());
-  }
-
-  add(person1): void {
-    console.log("Inside add ==========");
-    this._observableservice.addperson(person1);
-    setTimeout(() => {
-      this.listdata();
-      //  this.getusers();
-      // this.gethero();
-      $(".ng-dirty").val("");
-    }, 1000);
-  }
-
-
-  delete(pers) {
-    console.log("Inside delete ==========");
-    this._observableservice.deleteperson(pers);
-    setTimeout(() => this.listdata(), 1000);
-  }
-
-  /* getpersondata(){
-    this._observableservice.getperson(pers);
-  } */
-
-  editnew(e) {
-    this.toggleshoweditnew();
-  }
-  updaterow(e) {
-    console.log("Inside Update ==========" + e);
-  }
-
-  edit(per) {
-    console.log("per======" + JSON.stringify(per));
-    this.toggleshowedit(per);
-  }
-
-  // callmodal1()
-  /* callmodal(value){
-    // loadpage = value;
-      console.log("Inside modal call in app.component.ts")
-  } */
 }

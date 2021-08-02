@@ -39,7 +39,6 @@ import { TableComponent } from './components/table/table.component';
 import { HighlightComponent } from './components/highlight.component';
 import { AmchartComponent } from './components/amchart/amchart.component';
 import { MaterialComponent } from './components/material/material.component';
-import { LittleTourComponent } from './components/data/littletour.component';
 import { LoginFormComponent } from './components/login-form/login-form.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 
@@ -60,7 +59,6 @@ import { MatInputModule, MatButtonModule, MatProgressSpinnerModule, MatProgressB
     AppComponent,
     TableComponent,
     DataComponent,
-    LittleTourComponent,
     HighlightComponent,
     PageNotFoundComponent,
     HighlightDirective,
